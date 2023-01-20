@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Создать в html список состоящий из 3-х произвольных элементов li
+Нужно создать кнопку которая будет добавлять элементы списка с текстом “новый элемент списка”
+Создать кнопку, которая будет удалять первый элемент из созданного списка
+Создать кнопку, при клике на которую ей добавляется-убирается класс “click” -->
+
+    <ul>
+      <li>Элемент 1</li>
+      <li>Элемент 2</li>
+      <li>Элемент 3</li>
+    </ul>
+
+    <button class="buttonAdd">Добавить</button>
+    <button class="buttonDelete">Удалить</button>
+    <button class="bullonClick">Click</button>
+    <script>
+      const butAdd = document.querySelector(".buttonAdd");
+      const ulEl = document.querySelector("ul");
+      butAdd.addEventListener("click", (e) => {
+        e.preventDefault();
+        const liNew = document.createElement("li");
+        liNew.textContent = "Новый элемент списка";
+        ulEl.appendChild(liNew);
+      });
+
+      const butDel = document.querySelector(".buttonDelete");
+      butDel.addEventListener("click", (e) => {
+        const li1 = document.querySelector("li");
+        li1.remove();
+      });
+
+      const butCl = document.querySelector(".bullonClick");
+      butCl.addEventListener("click", (e) => {
+        let count = 0;
+        count > 0 && count % 2 == 0
+          ? butCl.Element.classList.toggle("click")
+          : butCl.classList.toggle("click");
+        console.log(butCl);
+      });
+    </script>
+  </body>
+</html>
